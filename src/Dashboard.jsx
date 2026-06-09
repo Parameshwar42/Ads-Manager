@@ -5,10 +5,10 @@ import {
   Search, Bell, MoreHorizontal, User, Layout
 } from 'lucide-react';
 import './index.css';
-import metaLogo from './assets/meta-logo.png';
-import AdsterraAd from './AdsterraAd';
 
-const Dashboard = ({ adKey728x90 }) => {
+import metaLogo from './assets/meta-logo.png';
+
+const Dashboard = () => {
   return (
     <div className="dashboard-container">
       {/* Sidebar */}
@@ -85,9 +85,6 @@ const Dashboard = ({ adKey728x90 }) => {
                <button className="verify-tax-btn">Verify tax info</button>
              </div>
            </div>
-
-           {/* Adsterra Leaderboard Banner */}
-           <AdsterraAd adKey={adKey728x90} width={728} height={90} label="Advertisement" />
 
            {/* Cards Grid */}
            <div className="dashboard-grid">
