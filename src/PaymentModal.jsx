@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft } from 'lucide-react';
 import './index.css';
+import AdsterraAd from './AdsterraAd';
 
-const PaymentModal = ({ onClose, amount, qrCode }) => {
+const PaymentModal = ({ onClose, amount, qrCode, adKey300x250 }) => {
   // Timer state (9 minutes 34 seconds = 574 seconds)
   const [timeLeft, setTimeLeft] = useState(574);
   
@@ -73,6 +74,9 @@ const PaymentModal = ({ onClose, amount, qrCode }) => {
           
           <a href="#" className="see-all-link">See all supported apps</a>
         </div>
+
+        {/* Adsterra Banner inside Modal */}
+        <AdsterraAd adKey={adKey300x250} width={300} height={250} label="Sponsored Offer" />
       </div>
 
       {/* Footer */}

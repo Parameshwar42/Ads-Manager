@@ -2,7 +2,18 @@ import React, { useState } from 'react';
 import { Settings, X, Upload } from 'lucide-react';
 import './index.css';
 
-const ControlPanel = ({ amount, setAmount, qrCode, setQrCode, showModal, setShowModal }) => {
+const ControlPanel = ({ 
+  amount, 
+  setAmount, 
+  qrCode, 
+  setQrCode, 
+  showModal, 
+  setShowModal,
+  adKey728x90,
+  setAdKey728x90,
+  adKey300x250,
+  setAdKey300x250
+}) => {
   const [isOpen, setIsOpen] = useState(true);
 
   if (!isOpen) {
@@ -70,6 +81,26 @@ const ControlPanel = ({ amount, setAmount, qrCode, setQrCode, showModal, setShow
         >
           <Upload size={16} /> Upload QR
         </label>
+      </div>
+
+      <div className="control-group">
+        <label>Adsterra 728x90 Key</label>
+        <input 
+          type="text" 
+          value={adKey728x90 === 'placeholder' ? '' : adKey728x90} 
+          onChange={(e) => setAdKey728x90(e.target.value || 'placeholder')} 
+          placeholder="e.g. 8fa605f6..."
+        />
+      </div>
+
+      <div className="control-group">
+        <label>Adsterra 300x250 Key</label>
+        <input 
+          type="text" 
+          value={adKey300x250 === 'placeholder' ? '' : adKey300x250} 
+          onChange={(e) => setAdKey300x250(e.target.value || 'placeholder')} 
+          placeholder="e.g. 5cb904b3..."
+        />
       </div>
 
       <button 
