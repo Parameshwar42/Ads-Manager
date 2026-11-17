@@ -297,7 +297,7 @@ const Dashboard = ({ onOpenAddFunds }) => {
         )}
 
         {activeNav === 'analytics' && (
-          <AnalyticsView />
+          <AnalyticsView onEnrollCourse={onOpenAddFunds} />
         )}
 
         {activeNav === 'audiences' && (

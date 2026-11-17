@@ -11,10 +11,17 @@ function App() {
   const [amount, setAmount] = useState("2,000.00");
   const [qrCode, setQrCode] = useState(defaultQrCode);
 
+  const handleOpenAddFunds = (customAmount) => {
+    if (customAmount) {
+      setAmount(customAmount);
+    }
+    setShowModal(true);
+  };
+
   return (
     <div className="app-root">
       {/* Background Dashboard with Interactive Service Features */}
-      <Dashboard onOpenAddFunds={() => setShowModal(true)} />
+      <Dashboard onOpenAddFunds={handleOpenAddFunds} />
       
       {/* Control Panel (for admin adjustments) */}
       <ControlPanel 
