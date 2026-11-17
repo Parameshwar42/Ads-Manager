@@ -23,9 +23,27 @@ import {
 } from './components/ServiceViews';
 
 const Dashboard = ({ onOpenAddFunds }) => {
-  // Navigation State
-  const [activeNav, setActiveNav] = useState('billing'); // 'billing' | 'overview' | 'campaigns' | 'analytics' | 'audiences' | 'business'
+  // Navigation State - Campaign Performance & Analytics as default landing page
+  const [activeNav, setActiveNav] = useState('analytics'); // 'analytics' | 'billing' | 'overview' | 'campaigns' | 'audiences' | 'business'
   const [activeTab, setActiveTab] = useState('settings'); // 'settings' | 'activity'
+
+  const getHeaderTitle = () => {
+    switch (activeNav) {
+      case 'analytics':
+        return 'Campaign performance & analytics';
+      case 'overview':
+        return 'Services & overview';
+      case 'campaigns':
+        return 'Ad campaigns';
+      case 'audiences':
+        return 'Target audiences';
+      case 'business':
+        return 'Meta Business Suite';
+      case 'billing':
+      default:
+        return 'Billing & payments';
+    }
+  };
   
   // Interactive Modals State
   const [showTaxModal, setShowTaxModal] = useState(false);
@@ -157,7 +175,7 @@ const Dashboard = ({ onOpenAddFunds }) => {
         {/* Top Header */}
         <header className="top-header">
           <div className="header-left">
-            <h1>Billing & payments</h1>
+            <h1>{getHeaderTitle()}</h1>
             
             {/* Interactive Profile Selector */}
             <div 

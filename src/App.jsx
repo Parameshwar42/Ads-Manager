@@ -7,7 +7,7 @@ import ControlPanel from './ControlPanel';
 import defaultQrCode from './assets/qr-code.png';
 
 function App() {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [amount, setAmount] = useState("2,000.00");
   const [qrCode, setQrCode] = useState(defaultQrCode);
 
