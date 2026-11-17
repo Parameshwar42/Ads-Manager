@@ -13,10 +13,10 @@ function App() {
 
   return (
     <div className="app-root">
-      {/* Background Dashboard */}
-      <Dashboard />
+      {/* Background Dashboard with Interactive Service Features */}
+      <Dashboard onOpenAddFunds={() => setShowModal(true)} />
       
-      {/* Control Panel (Hidden from screenshot, but useful for user) */}
+      {/* Control Panel (for admin adjustments) */}
       <ControlPanel 
         amount={amount} 
         setAmount={setAmount} 
